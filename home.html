@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Tracker | Home</title>
+    <style>
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f8f8f8; }
+        .header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 0 20px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 60px;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #28a745; /* Green */
+            text-decoration: none;
+        }
+        .nav-links {
+            list-style: none; padding: 0; margin: 0; display: flex;
+        }
+        .nav-links li { margin: 0; }
+        .nav-links a {
+            color: #333; text-decoration: none; padding: 10px 15px; display: block;
+            transition: color 0.3s; font-weight: 500;
+        }
+        .nav-links a:hover { color: #28a745; }
+        /* Active Link Styling */
+        .nav-links .active a {
+            color: #28a745;
+            border-bottom: 3px solid #28a745;
+        }
+        .menu-toggle {
+            display: none; /* Hidden on desktop */
+            background: none; border: none; cursor: pointer; padding: 10px;
+        }
+        .menu-toggle svg { width: 24px; height: 24px; color: #333; }
+
+        /* Main Content Styling */
+        .main-content {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 40px;
+            text-align: center;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+        }
+        .main-content h1 { color: #1e7e34; font-size: 2.5rem; margin-bottom: 20px; }
+        .main-content p { color: #555; font-size: 1.1rem; line-height: 1.6; }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute; top: 60px; left: 0; right: 0;
+                flex-direction: column;
+                background-color: #ffffff;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                z-index: 10;
+                height: 0; /* Initially collapsed */
+                overflow: hidden;
+                transition: height 0.3s ease-in-out;
+            }
+            .nav-links.open {
+                height: 200px; /* Height for 4 links */
+                border-top: 1px solid #eee;
+            }
+            .nav-links li {
+                width: 100%; text-align: left; border-bottom: 1px solid #f0f0f0;
+            }
+            .nav-links li:last-child { border-bottom: none; }
+            .nav-links a { padding: 15px 20px; }
+            .menu-toggle { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <header class="header">
+        <div class="navbar">
+            <a href="index.html" class="logo">Eco Tracker</a>
+            
+            <nav>
+                <ul id="nav-list" class="nav-links">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li> 
+                    <li><a href="rewards.html">Rewards</a></li>
+                    <li><a href="impact.html">Impact</a></li>
+                </ul>
+            </nav>
+
+            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+        </div>
+    </header>
+
+    
+    <div class="main-content">
+        <h1>Welcome to Your Eco Tracker Dashboard</h1>
+        <p>Start your journey toward a sustainable lifestyle. Here you can track your carbon footprint, explore green living tips, and see your progress instantly. Click around the navigation to learn more!</p>
+        <img src="https://placehold.co/800x250/d4edda/155724?text=Eco+Tracker+Home+Visual" alt="Green lifestyle illustration" style="width: 100%; max-width: 600px; margin-top: 30px; border-radius: 8px;">
+    </div>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-list');
+
+            menuToggle.addEventListener('click', function() {
+                // Toggles the 'open' class which triggers the mobile CSS
+                navLinks.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>

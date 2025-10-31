@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Tracker | Rewards</title>
+    <style>
+        
+        body { font-family: 'Inter', sans-serif; margin: 0; background-color: #e8f5e9;  }
+        
+
+        .header {
+            background-color: #ffffff; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); padding: 0 20px;
+        }
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            max-width: 1200px; margin: 0 auto; height: 60px;
+        }
+        .logo { font-size: 1.5rem; font-weight: 800; color: #1b5e20; /* Darker Green Logo */ text-decoration: none; }
+        .nav-links { list-style: none; padding: 0; margin: 0; display: flex; }
+        .nav-links li { margin: 0; }
+        .nav-links a {
+            color: #388e3c; text-decoration: none; padding: 10px 15px; display: block;
+            transition: all 0.3s; font-weight: 600; border-radius: 6px;
+        }
+        .nav-links a:hover { background-color: #f1f8e9; color: #2e7d32; }
+       
+        .nav-links .active a {
+            color: #1b5e20; border-bottom: 3px solid #4caf50;
+        }
+        .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+        .menu-toggle svg { width: 24px; height: 24px; color: #388e3c; }
+
+
+        .main-content {
+            max-width: 800px; margin: 40px auto; padding: 40px;
+            background-color: #ffffff; 
+            border-radius: 16px; 
+            box-shadow: 0 10px 30px rgba(0, 50, 0, 0.1); /* Soft green shadow */
+        }
+        .main-content h1 { 
+            color: #1b5e20; 
+            font-size: 2.2rem; 
+            margin-bottom: 30px; 
+            text-align: center;
+            border-bottom: 3px solid #c8e6c9;
+            padding-bottom: 15px;
+        }
+        
+
+        .balance-card {
+            background-color: #dcedc8; 
+            border: 1px solid #aed581; 
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .balance-card .points {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #33691e; 
+            line-height: 1;
+        }
+        .balance-card p {
+            color: #4a5d3f;
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+
+        
+        .reward-card {
+            background-color: #f1f8e9;
+            border: 1px solid #e0f2f1; 
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .reward-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(76, 175, 80, 0.2); 
+        }
+        .reward-card .icon {
+            font-size: 2.5rem;
+            margin-right: 20px;
+        }
+        .reward-card h2 { 
+            color: #2e7d32; 
+            font-size: 1.3rem; 
+            margin: 0;
+        }
+        .reward-card p { 
+            margin: 5px 0 0 0; 
+            color: #666; 
+        }
+
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute; top: 60px; left: 0; right: 0;
+                flex-direction: column; background-color: #ffffff; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                z-index: 10; height: 0; overflow: hidden; transition: height 0.3s ease-in-out;
+            }
+            .nav-links.open { height: 200px; border-top: 1px solid #eee; }
+            .nav-links li { width: 100%; text-align: left; border-bottom: 1px solid #f0f0f0; }
+            .nav-links li:last-child { border-bottom: none; }
+            .nav-links a { padding: 15px 20px; }
+            .menu-toggle { display: block; }
+            .main-content { margin: 20px; padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <header class="header">
+        <div class="navbar">
+            <a href="index.html" class="logo">Eco Tracker</a>
+            
+            <nav>
+                <ul id="nav-list" class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    
+                    <li class="active"><a href="rewards.html">Rewards</a></li>
+                    <li><a href="impact.html">Impact</a></li>
+                </ul>
+            </nav>
+
+            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">
+                
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+        </div>
+    </header>
+
+    
+    <div class="main-content">
+        <h1>🌱 Your Eco Points Dashboard</h1>
+        
+        
+        <div class="balance-card">
+            <div class="points">1,250</div>
+            <p>Eco Points Earned So Far</p>
+            <p style="font-style: italic; font-size: 0.95rem;">Keep up the great work! Only 250 points needed for the next reward.</p>
+        </div>
+        
+        <h2>🎁 Available Rewards</h2>
+
+        
+        <div class="reward-card">
+            <span class="icon" role="img" aria-label="Gift">🎁</span>
+            <div>
+                <h2>$10 Sustainable Gift Card</h2>
+                <p>Cost: 2,000 Points | Redeem for discounts at partner eco-friendly stores.</p>
+            </div>
+        </div>
+        
+        
+        <div class="reward-card">
+            <span class="icon" role="img" aria-label="Tree">🌳</span>
+            <div>
+                <h2>Plant a Tree Donation</h2>
+                <p>Cost: 500 Points | Fund the planting of one tree in a critical ecosystem.</p>
+            </div>
+        </div>
+        
+        
+        <div class="reward-card">
+            <span class="icon" role="img" aria-label="Badge">🥇</span>
+            <div>
+                <h2>"Green Champion" Digital Badge</h2>
+                <p>Cost: 50 Points | Display on your profile to celebrate your commitment.</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-list');
+
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>
